@@ -90,7 +90,7 @@ int main()
 
            if(!(isalnum(s[i+1]))){
 
-            cout<<number<<", ";
+            cout<<number;
 
                 postfix+=numToStr(number);
 
@@ -108,8 +108,6 @@ int main()
                     postfix+=my_stack[top];
                     postfix+=" ";
                     cout<<pop();
-
-                    if(top>=-1 &&i!=s.size()-1)cout<<", ";
                   }
                   pop();
         }
@@ -118,7 +116,7 @@ int main()
                     postfix+=my_stack[top];
                     postfix+=" ";
                     cout<<pop();
-                    if(top>=-1 && i!=s.size()-1)cout<<", ";
+                    
 
                 }
                 push(s[i]);
@@ -128,5 +126,5 @@ int main()
             postfix+=my_stack[top];
             postfix+=" ";
             cout<<pop();
-            if(top>=0)cout<<", ";}
+           
             cout<<"\n"<<"Value: "<<evaluation(postfix);}
