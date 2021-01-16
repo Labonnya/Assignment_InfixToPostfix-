@@ -1,18 +1,25 @@
 #include <iostream>
 #include<bits/stdc++.h>
 using namespace std;
-#define stack_max 100
 int top=-1;
-char stack[stack_max];
-int result[stack_max];
-int head=-1;
+char stack[100];
+int result[100];
+int head=-1,n=100;
 
 void push(char ele){
-    stack[++top]=i;
+    if(top>=n-1)
+   cout<<"Stack Overflow"<<endl;
+   else {
+      top++;
+      stack[top]=i;
     }
 char pop(){
 
-    return stack[top--];
+    if(top<=-1)
+   cout<<"Stack Underflow"<<endl;
+   else {
+      cout<<"The popped element is "<< stack[top] <<endl;
+      top--;
 
 }
 
@@ -29,10 +36,10 @@ int priority(char ch){
 
 string numToStr(int x){
     string str="";
-    int k;
+    int j;
     while(x!=0){
-        k=x%10;
-        str+=k+'0';
+        j=x%10;
+        str+=j+'0';
         x/=10;
 
     }
